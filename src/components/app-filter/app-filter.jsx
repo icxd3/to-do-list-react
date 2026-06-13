@@ -9,12 +9,12 @@ const AppFilter = () => {
                     Все сотрудники
             </button>
             <button
-                className="btn btn-outline-light"
+                className="btn btn-light"
                 type="button">
                     На повышение    
             </button>
             <button
-                className="btn btn-outline-light"
+                className="btn btn-light"
                 type="button">
                     Зарплаты больше 1000$
             </button>
