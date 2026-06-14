@@ -11,7 +11,12 @@
     line-height: 35px;
     font-size: 20px;
     cursor: pointer;
-    min-width: 550px;
+    /* Use flexible layout instead of fixed min-width to avoid pushing layout */
+    flex: 1 1 auto;
+    text-align: left;
+    margin-right: 12px;
+    min-width: 0;
+    /* allow shrinking inside flex container */
 }
 
 .list-group-item input {
@@ -19,9 +24,11 @@
     font-size: 20px;
     text-align: center;
     border: 0;
+    width: 110px;
+    box-sizing: border-box;
 }
 
-.list-grouip-item button {
+.list-group-item button {
     width: 35px;
     height: 35px;
     margin: 3px;
@@ -55,11 +62,12 @@
     transform: translateX(0px);
 }
 
-.list-group-item.increase .list-grouip-item-label,
+.list-group-item.increase .list-group-item-label,
 .list-group-item.increase .list-group-item-input {
-    color: #a0d410;
+    /* highlight increased employees (teacher's demo used orange) */
+    color: #ff8c00;
 }
 
-.list-group-item.increase .btn-star {
+.list-group-item.increase .fa-star {
     color: yellow;
 }
