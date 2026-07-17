@@ -1,23 +1,27 @@
 import './app-filter.css';
 
-const AppFilter = () => {
-    return ( 
+const AppFilter = ({ filter, onFilterSelect }) => {
+    const buttons = [
+        { name: 'all', label: 'Все сотрудники' },
+        { name: 'increase', label: 'На повышение' },
+        { name: 'salary', label: 'Зарплаты больше 1000$' }
+    ]
+
+    return (
         <div className="btn-group">
-            <button 
-                className="btn btn-light"
-                type="button">
-                    Все сотрудники
-            </button>
-            <button
-                className="btn btn-light"
-                type="button">
-                    На повышение    
-            </button>
-            <button
-                className="btn btn-light"
-                type="button">
-                    Зарплаты больше 1000$
-            </button>
+            {buttons.map(({ name, label }) => {
+                const isActive = filter === name
+
+                return (
+                    <button
+                        key={name}
+                        className={`btn ${isActive ? 'btn-dark' : 'btn-light'}`}
+                        type="button"
+                        onClick={() => onFilterSelect(name)}>
+                        {label}
+                    </button>
+                )
+            })}
         </div>
     )
 }
