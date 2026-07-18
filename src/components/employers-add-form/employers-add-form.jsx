@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
-import './empoyers-add-form.css';
+// import './empoyers-add-form.css';
+import './employers-add-form.scss';
 
 // Это устаревший метод - классовые компоненты (до 2019)
 // Рекомендуется переписать на функциональные компоненты с React Hooks
